@@ -22,7 +22,7 @@ void main() {
 }
 
 void render(num dt) {
-  context.clearRect(0, 0, canvas.width, canvas.height);
+  //context.clearRect(0, 0, canvas.width, canvas.height);
   context.drawImage(vid, 0, 0);
   window.requestAnimationFrame(render);
 }
