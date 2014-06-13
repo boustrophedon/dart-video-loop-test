@@ -1,0 +1,9 @@
+name: video_test
+version: "0.1.0"
+description: video loop test
+author: Harry Stern <harry.stern@rutgers.edu>
+homepage: https://github.com/boustrophedon/dart-video-loop-test
+environment:
+  sdk: ">=1.2.0"
+dependencies:
+  browser: any
