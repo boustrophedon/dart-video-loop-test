@@ -1,28 +1,16 @@
 import 'dart:html';
 
-CanvasElement canvas;
-CanvasRenderingContext2D context;
-VideoElement vid;
-
 void main() {
-  canvas = querySelector("#area");
-  context = canvas.context2D;
-
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  vid = new VideoElement();
-  vid.width = canvas.width;
-  vid.height = canvas.height;
+  var vid = new VideoElement();
   vid.loop = true;
-  vid.src = "pika.webm";
   vid.autoplay = true;
 
-  vid.onCanPlay.listen((e)=>(window.requestAnimationFrame(render)));
+  SourceElement source = new SourceElement();
+  source.src = "pika.webm";
+  source.type = "video/webm";
+
+  vid.nodes.add(source);
+
+  document.body.nodes.add(vid);
 }
 
-void render(num dt) {
-  //context.clearRect(0, 0, canvas.width, canvas.height);
-  context.drawImage(vid, 0, 0);
-  window.requestAnimationFrame(render);
-}
